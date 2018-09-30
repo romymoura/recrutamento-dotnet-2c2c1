@@ -1,0 +1,14 @@
+[
+    {
+        "ordenalista-body": "{\n  \"lista\": [\n    \"A\",\n    \"C\",\n    \"B\"\n  ]\n}",
+        "ordenalista-expected": "{\"listaOrdenada\":[\"A\",\"B\",\"C\"]}",
+        "paginalista-body": "{\n  \"lista\": [\n    \"A\",\n    \"B\",\n    \"C\",\n    \"D\",\n    \"E\",\n    \"F\",\n    \"G\",\n    \"H\",\n    \"I\",\n    \"J\",\n    \"K\",\n    \"L\",\n    \"M\",\n    \"N\",\n    \"O\",\n    \"P\",\n    \"Q\",\n    \"R\",\n    \"S\",\n    \"T\",\n    \"U\",\n    \"V\"\n  ],\n  \"tamanhoPagina\": 5,\n  \"indicePagina\": 2\n}",
+        "paginalista-expected": "{\"listaPaginada\":[\"K\",\"L\",\"M\",\"N\",\"O\"]}",
+        "buscacontatolista-body": "{\n  \"quantidadeRegistro\": 3,\n  \"busca\": \"s\",\n  \"listaContatos\": [\n    {\n      \"nome\": \"mauricio\",\n      \"telefone\": \"12 1234 1234\"\n    },\n    {\n      \"nome\": \"vinicius\",\n      \"telefone\": \"11 1134 1134\"\n    },\n    {\n      \"nome\": \"lucas\",\n      \"telefone\": \"11 1214 1214\"\n    },\n    {\n      \"nome\": \"humberto\",\n      \"telefone\": \"11 1231 1231\"\n    }\n  ]\n}",
+        "buscacontatolista-expected": "{\"listaContatos\":[{\"nome\":\"vinicius\",\"telefone\":\"11 1134 1134\"},{\"nome\":\"lucas\",\"telefone\":\"11 1214 1214\"}]}",
+        "quantidadepalavras-body": "{\n  \"texto\": \"Primeiro eu queria cumprimentar os internautas. -Oi Internautas! Depois dizer que o meio ambiente é sem dúvida nenhuma uma ameaça ao desenvolvimento sustentável. E isso significa que é uma ameaça pro futuro do nosso planeta e dos nossos países. O desemprego beira 20%, ou seja, 1 em cada 4 portugueses.\n\nA população ela precisa da Zona Franca de Manaus, porque na Zona franca de Manaus, não é uma zona de exportação, é uma zona para o Brasil. Portanto ela tem um objetivo, ela evita o desmatamento, que é altamente lucravito. Derrubar arvores da natureza é muito lucrativo!\",\n  \"palavra\": \"internautas\"\n}",
+        "quantidadepalavras-expected": "{\"quantidadeOcorrencias\":1}",
+        "temvencedor-body": "{\n  \"jogo\": [\n    [ \" \", \"x\", \"o\"],\n    [ \"o\", \"x\", \" \"],\n    [ \" \", \"x\", \"o\"]\n  ]\n}",
+        "temvencedor-expected": "{\"temVencedor\":true}"
+    }
+]
