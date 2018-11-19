@@ -1,0 +1,31 @@
+﻿@page
+@model _7COMm.Recrutamento.Application.WebUI.Pages.OcorrenciasTermoModel
+@{
+    ViewData["Title"] = "OcorrenciasTermo";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Quantidade de ocorrências @Model.Ocorrencia.Quantidade</h2>
+    </div>
+</div>
+
+<form method="post" id="OcorrenciaForm">
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" name="Palavra" value="doce" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <textarea name="Texto" id="Texto"
+                      data-val-required="O campo Descrição é obrigatório."
+                      data-val-maxlength-max="5000"
+                      data-val-maxlength="Mmáximo de'5000'."
+                      data-val="true">
+Qual doce é mais doce que batata doce?
+</textarea>
+        </div>
+    </div>
+    <input type="submit" value="Verificar Ocorrências" class="btn btn-default" />
+</form>

@@ -1,0 +1,72 @@
+﻿@page
+@model _7COMm.Recrutamento.Application.WebUI.Pages.JogoDaVelhaModel
+@{
+    ViewData["Title"] = "JogoDaVelha";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Contatos</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @if (Model.Tabuleiro.TemVencedor)
+        {
+            <h2>Sim tem vencedores neste jogo</h2>
+        }
+        else
+        {
+            <h2>Não tem vencedores neste jogo</h2>
+        }
+    </div>
+</div>
+
+<form method="post" id="jogoDaVelhaForm">
+    <!--Linha 0 até a coluna 2-->
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" name="LinhaZeroColunaZero" value="@Model.Tabuleiro.LinhaZeroColunaZero" />
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="LinhaZeroColunaUm" value="@Model.Tabuleiro.LinhaZeroColunaUm" />
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="LinhaZeroColunaDois" value="@Model.Tabuleiro.LinhaZeroColunaDois" />
+        </div>
+    </div>
+    <!--Linha 1 até a coluna 2-->
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" name="LinhaUmColunaZero" value="@Model.Tabuleiro.LinhaUmColunaZero" />
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="LinhaUmColunaUm" value="@Model.Tabuleiro.LinhaUmColunaUm" />
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="LinhaUmColunaDois" value="@Model.Tabuleiro.LinhaUmColunaDois" />
+        </div>
+    </div>
+    <!--Linha 2 até a coluna 2-->
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" name="LinhaDoisColunaZero" value="@Model.Tabuleiro.LinhaDoisColunaZero" />
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="LinhaDoisColunaUm" value="@Model.Tabuleiro.LinhaDoisColunaUm" />
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="LinhaDoisColunaDois" value="@Model.Tabuleiro.LinhaDoisColunaDois" />
+        </div>
+    </div>
+    <!--Linha 0 até a coluna 2-->
+    <div class="row">
+        &nbsp;
+    </div>
+    <div class="form-actions no-color">
+        <input type="submit" value="Verificar Ganhador" class="btn btn-default" />
+    </div>
+</form>
+
+

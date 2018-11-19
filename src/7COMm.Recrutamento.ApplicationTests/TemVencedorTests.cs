@@ -1,5 +1,7 @@
-﻿using _7COMm.Recrutamento.Application.ActionModel;
+﻿//using _7COMm.Recrutamento.Application.ActionModel;
 using _7COMm.Recrutamento.Application.Controllers;
+using _7COMm.Recrutamento.CrossCuting.DTO;
+using _7COMm.Recrutamento.CrossCuting.Response;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
@@ -13,29 +15,29 @@ namespace _7COMm.Recrutamento.ApplicationTests
 
         public TemVencedorTests()
         {
-            RecrutamentoController = new RecrutamentoController();
+            //RecrutamentoController = new RecrutamentoController();
         }
 
         [TestMethod]
         public async Task TemVencedorTest_1()
         {
             TemVencedorRequest request = new TemVencedorRequest();
-            request.Jogo = new[]  {
-                new[] { "x", "o", "x" },
-                new[] { "o", "o", "o" },
-                new[] { "x", " ", "x" }
-            };
+            //request.Jogo = new[]  {
+            //    new[] { "x", "o", "x" },
+            //    new[] { "o", "o", "o" },
+            //    new[] { "x", " ", "x" }
+            //};
 
-            ActionResult<TemVencedorResponse> expected = new ActionResult<TemVencedorResponse>(new TemVencedorResponse { TemVencedor = true });
-            ActionResult<TemVencedorResponse> obtained = await RecrutamentoController.TemVencedor(request);
+            ApplicationResponse<TemVencedorResponse> expected = new ApplicationResponse<TemVencedorResponse>(new TemVencedorResponse { TemVencedor = true });
+            ApplicationResponse<TemVencedorResponse> obtained = await RecrutamentoController.TemVencedor(request);
 
-            if (!(obtained.Result is OkObjectResult))
+            if (!(obtained.Status == ApplicationResponseStatus.Success))
             {
                 Assert.Fail("A resposta da controller não é um OkObjectResult.");
             }
             else
             {
-                Assert.AreEqual(expected.Value.TemVencedor, ((TemVencedorResponse)((OkObjectResult)obtained.Result).Value).TemVencedor);
+                Assert.AreEqual(expected.Value.TemVencedor, (obtained.Value).TemVencedor);
             }
         }
     }

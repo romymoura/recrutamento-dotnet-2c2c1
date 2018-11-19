@@ -1,5 +1,37 @@
 # Recrutamento 7COMm (.Net-2C2C1)
 
+--Tome nota ------> O que foi atribuido.
+
+	Seguindo os padrões DDD ao invés de utilizar o conceito de Factory, optei em criar services e injeção de dependencia, deixando o projeto e suas DLL's menos dependentes uma das outras, o que nos permite modular melhor o sistema.
+	Utilizei o EF Code First e habilitei o Migration para realizar comandos e criação do Database.
+	Além da implementação que foi pedido, foi atribuido para cada camada suas respectivas responsabilidades, Camada de repository, uma interface com usuário para fazer as integrações com API e rastreabilidade de chamadas aos end-points da API.
+
+1º Para iniciar os recursos, como criar a base primeiro verifique a instancia SQL e string de conecxão do projeto 7COMm.Recrutamento.Application.WebUI/appsettings.json lembrando que essa mesma conexão deve ser configurada no projeto de API "7COMm.Recrutamento.Application"
+
+	Obs: devemos alterar o usuário e senha de conexão e o nome da base caso necessário.
+
+2º Abra o Package Manager Console, depois aponte o projeto "7COMm.Recrutamento.Data" e digite o seguintes comandos para subir as tabelas.
+
+	Obs: 1º update-database
+	
+3º Execute o seguinte script 
+	insert into Contatos (Nome, Telefone) values
+	('vinicius', '545646548'),
+	('lucas', '45468846545'),
+	('fedatto', '47864654'),
+	('humberto', '884654545'),
+	('jimmy', '213215844'),
+	('christian', '218484545'),
+	('mike', '879872512'),
+	('akkio', '51518321'),
+	('lex', '1351218484'),
+	('eric', '5151183511')
+
+
+	
+
+
+
 O `recrutamento-dotnet-2c2c1` é um teste aplicado pela [7COMm Serviços e Soluções em TI](https://7comm.com.br) para recrutamento de profissionais `C#`.
 
 ## Como funciona a avaliação

@@ -1,0 +1,78 @@
+﻿@page
+@model _7COMm.Recrutamento.Application.WebUI.Pages.ContatosModel
+@{
+    ViewData["Title"] = "Contatos";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Contatos</h2>
+    </div>
+</div>
+<form asp-action="Contatos" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Procurar por nome : <input type="text" name="filtro" value="@ViewData["filtroAtual"]" />
+            Quantidade máxima na visualização : <input type="text" name="qtdVisual" value="@ViewData["qtdVisual"]" />
+            <input type="submit" value="Procurar" class="btn btn-default" />
+        </p>
+    </div>
+</form>
+
+
+@foreach (string nome in Model.Contatos?.ListaContatos.ListaPaginada)
+{
+    <div class="row">
+        <div class="col-md-2">
+            Nome:
+        </div>
+        <div class="col-md-10">
+            @nome
+        </div>
+    </div>
+}
+@{
+    var prevDisabled = !Model.Contatos.ListaContatos.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Contatos.ListaContatos.HasNextPage ? "disabled" : "";
+}
+
+<div class="row">
+    &nbsp;
+</div>
+
+<a asp-route-ordem="@ViewData["ordemAtual"]"
+   asp-route-pagina="@(Model.Contatos.ListaContatos.PageIndex - 1)"
+   asp-route-filtroAtual="@ViewData["filtroAtual"]"
+   class="btn btn-default @prevDisabled">
+    Anterior
+</a>
+
+<a asp-route-ordem="@ViewData["ordemAtual"]"
+   asp-route-pagina="@(Model.Contatos.ListaContatos.PageIndex + 1)"
+   asp-route-filtroAtual="@ViewData["filtroAtual"]"
+   class="btn btn-default @nextDisabled">
+    Proximo
+</a>
+
+<div class="row">
+    &nbsp;
+</div>
+<div class="row">
+    &nbsp;
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        Integrações efetivas.
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <pre>
+            POST /api/v1/ordena-lista: recebe uma lista de valores no formato { "lista": [ "string" ] } e devolve esta mesma lista com seus elementos ordenados em ordem alfabética crescente no formato { "listaOrdenada": [ "string" ] };
+            POST /api/v1/pagina-lista: recebe o tamanho da página, o índice da página e uma lista de elementos a serem paginados, no formato { "lista": [ "string" ], "tamanhoPagina": 0, "indicePagina": 0 }, e devolve a página solicitada com seus respectivos elementos, no formato { "listaPaginada": [ "string" ] };
+            POST /api/v1/busca-contato-lista: recebe um indicador de quantos contatos devem ser incluídos, um termo de pesquisa e uma lista de contatos no formato { "quantidadeRegistro": 0, "busca": "string", "listaContatos": [ { "nome": "string", "telefone": "string" } ] } e devolve uma lista dos contatos incluídos cujo nome contenham o termo buscado, no formato { "listaContatos": [ { "nome": "string", "telefone": "string" } ] };
+        </pre>
+    </div>
+</div>

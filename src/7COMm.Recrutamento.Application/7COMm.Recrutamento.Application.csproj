@@ -14,16 +14,43 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="wwwroot\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="ActionModel\BuscaContatoRequest.cs" />
+    <Compile Remove="ActionModel\BuscaContatoResponse.cs" />
+    <Compile Remove="ActionModel\ContaPalavrasTextoRequest.cs" />
+    <Compile Remove="ActionModel\ContaPalavrasTextoResponse.cs" />
+    <Compile Remove="ActionModel\OrdenaListaRequest.cs" />
+    <Compile Remove="ActionModel\OrdenaListaResponse.cs" />
+    <Compile Remove="ActionModel\PaginaListaRequest.cs" />
+    <Compile Remove="ActionModel\PaginaListaResponse.cs" />
+    <Compile Remove="ActionModel\TemVencedorRequest.cs" />
+    <Compile Remove="ActionModel\TemVencedorResponse.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Core.Logging.log4net" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.1.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\7COMm.Recrutamento.Business\7COMm.Recrutamento.Business.csproj" />
+    <ProjectReference Include="..\7COMm.Recrutamento.CrossCuting\7COMm.Recrutamento.CrossCuting.csproj" />
+    <ProjectReference Include="..\7COMm.Recrutamento.Data\7COMm.Recrutamento.Data.csproj" />
     <ProjectReference Include="..\7COMm.Recrutamento.Domain\7COMm.Recrutamento.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ActionModel\" />
   </ItemGroup>
 
 </Project>

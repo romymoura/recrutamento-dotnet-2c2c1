@@ -6,6 +6,6 @@ namespace _7COMm.Recrutamento.Application.ActionModel
     {
         public int QuantidadeRegistro { get; set; }
         public string Busca { get; set; }
-        public Domain.Contato.Contato[] ListaContatos { get; set; }
+        public Domain.Entities.Contato[] ListaContatos { get; set; }
     }
 }
