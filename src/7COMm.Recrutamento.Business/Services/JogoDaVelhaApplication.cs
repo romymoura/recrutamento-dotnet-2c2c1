@@ -16,7 +16,7 @@ namespace _7COMm.Recrutamento.Business.Services
             _jogoDaVelhaService = jogoDaVelhaService;
         }
 
-        public ApplicationResponse<TemVencedorResponse> VerificaQuantidadeOcorrencia(TemVencedorRequest request)
+        public ApplicationResponse<TemVencedorResponse> VerificarResultado(TemVencedorRequest request)
         {
             try
             {

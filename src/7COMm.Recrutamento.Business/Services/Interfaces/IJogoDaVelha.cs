@@ -6,6 +6,6 @@ namespace _7COMm.Recrutamento.Business.Services.Interfaces
 {
     public interface IJogoDaVelha
     {
-        ApplicationResponse<TemVencedorResponse> VerificaQuantidadeOcorrencia(TemVencedorRequest request);
+        ApplicationResponse<TemVencedorResponse> VerificarResultado(TemVencedorRequest request);
     }
 }
